@@ -26,7 +26,8 @@ const routes = [
   {
     path: "/user/:username", //:username Dynamic Segment in the path
     name: "user",
-    component: User
+    component: User,
+    props: true //The $route.params is set as the component props
   }
 ];
 
