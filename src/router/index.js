@@ -32,6 +32,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  mode: "history", //Enables Histoty mode. Uses the browser's history (.pushstate API) to change the URL without reloading the page.
   routes
 });
 
