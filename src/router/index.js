@@ -1,10 +1,10 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import EventList from '../views/EventList.vue'
-import EventShow from '../views/EventShow.vue'
-import EventCreate from '../views/EventCreate.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import EventList from '../views/EventList.vue';
+import EventShow from '../views/EventShow.vue';
+import EventCreate from '../views/EventCreate.vue';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -23,11 +23,11 @@ const routes = [
     name: 'event-create',
     component: EventCreate,
   },
-]
+];
 
 const router = new VueRouter({
   mode: 'history',
   routes,
-})
+});
 
-export default router
+export default router;
