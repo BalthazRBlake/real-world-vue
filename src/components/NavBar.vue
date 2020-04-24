@@ -1,7 +1,7 @@
 <template>
   <div id="nav" class="nav">
     <router-link to="/">
-      <BaseIcon name="code" />
+      <BaseIcon name="code" width="45" height="45" />
     </router-link>
     <nav>
       <router-link :to="{ name: 'event-list' }">List</router-link>|

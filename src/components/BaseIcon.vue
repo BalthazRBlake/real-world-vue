@@ -26,7 +26,7 @@ export default {
 .icon-wrapper {
   display: inline-flex;
   align-items: center;
-  color: rgba(0, 0, 255, 0.5);
+  color: rgba(100, 100, 100, 0.5);
   font-size: 1rem;
   font-weight: 600;
 }
