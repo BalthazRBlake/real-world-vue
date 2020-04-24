@@ -2,10 +2,25 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import BaseIcon from "@/components/BaseIcon.vue";
+import upperFirst from "lodash/upperFirst";
+import camelCase from "lodash/camelCase";
 
-Vue.component("BaseIcon", BaseIcon); //Register the global component ('Name for the App', Imported Component Name)
-//It should be declared before new Vue()
+const requireComponent = require.context(
+  "./components", // Directory to search within
+  false, // Search subdirectories
+  /Base[A-Z]\w+\.(vue|js)$/ // regular expression
+);
+
+requireComponent.keys().forEach((fileName) => {
+  const componentConfig = requireComponent(fileName);
+
+  const componentName = upperFirst(
+    camelCase(fileName.replace(/^\.\/(.*)\.\w+$/, "$1"))
+  );
+
+  Vue.component(componentName, componentConfig.default || componentConfig);
+});
+
 Vue.config.productionTip = false;
 
 new Vue({
