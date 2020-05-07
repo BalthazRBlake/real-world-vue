@@ -14,13 +14,17 @@ export default new Vuex.Store({
       "education",
       "food",
       "community"
-    ]
+    ],
+    events: []
   },
   mutations: {},
   actions: {},
   getters: {
     categoriesLength: state => {
       return state.categories.length;
+    },
+    getEventById: state => id => {
+      return state.events.find(event => event.id === id);
     }
   },
   modules: {}
