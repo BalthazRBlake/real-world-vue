@@ -44,10 +44,10 @@ export default {
   },
   created() {
     EventService.getEvent(this.id)
-      .then((response) => {
+      .then(response => {
         this.event = response.data;
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error.response);
       });
   }

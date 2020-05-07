@@ -20,10 +20,10 @@ export default {
   },
   created() {
     EventService.getEvents()
-      .then((response) => {
+      .then(response => {
         this.events = response.data;
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error.response);
       });
   }
