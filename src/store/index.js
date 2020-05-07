@@ -9,7 +9,7 @@ export default new Vuex.Store({
     categories: [
       "sustainability",
       "nature",
-      "aniaml welfare",
+      "animal welfare",
       "housing",
       "education",
       "food",
@@ -18,5 +18,10 @@ export default new Vuex.Store({
   },
   mutations: {},
   actions: {},
+  getters: {
+    categoriesLength: state => {
+      return state.categories.length;
+    }
+  },
   modules: {}
 });
