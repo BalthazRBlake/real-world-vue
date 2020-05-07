@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Create an event, {{ userName }}</h1>
-    <p>Event created by with id {{ userID }}</p>
+    <h1>Create an event, {{ user.name }}</h1>
+    <p>Event created by with id {{ user.id }}</p>
     <ul>
       <li v-for="category in categories" :key="category">
         {{ category }}
@@ -15,9 +15,8 @@ import { mapState } from "vuex";
 
 export default {
   computed: mapState({
-    userName: state => state.user.name,
-    userID: state => state.user.id,
-    categories: state => state.categories
+    user: "user",
+    categories: "categories"
   })
 };
 </script>
