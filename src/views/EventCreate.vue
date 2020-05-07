@@ -64,7 +64,13 @@ export default {
     Datepicker
   },
   data() {
+    const times = [];
+    for (let i = 0; i <= 24; i++) {
+      times.push(i + ":00");
+    }
     return {
+      times,
+      categories: this.$store.state.categories,
       event: this.createFreshEventObject()
     };
   },
@@ -84,7 +90,7 @@ export default {
         date: "",
         time: "",
         attendees: []
-      };
+      }
     }
   }
 };
