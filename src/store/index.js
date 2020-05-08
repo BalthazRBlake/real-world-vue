@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    user: { id: "abc123", name: "DonGato" },
+    user: { id: "abc123", name: "DonGator" },
     categories: [
       "sustainability",
       "nature",
@@ -34,8 +34,8 @@ export default new Vuex.Store({
         commit("ADD_EVENT", event);
       });
     },
-    fetchEvents({ commit }) { 
-      EventService.getEvents()
+    fetchEvents({ commit }, { perPage, page }) {
+      EventService.getEvents(perPage, page)
         .then(response => {
           commit("SET_EVENTS", response.data);
         })
