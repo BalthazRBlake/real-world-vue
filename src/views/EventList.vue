@@ -7,16 +7,18 @@
         :to="{ name: 'event-list', query: { page: page - 1 } }"
         rel="prev"
       >
-        Prev page
+        &lArr; Prev page
       </router-link>
     </template>
-    |
-    <router-link
-      :to="{ name: 'event-list', query: { page: page + 1 } }"
-      rel="next"
-    >
-      Next page
-    </router-link>
+    &nbsp;|&nbsp;
+    <template v-if="eventsTotal > page * 3">
+      <router-link
+        :to="{ name: 'event-list', query: { page: page + 1 } }"
+        rel="next"
+      >
+        Next page &rArr;
+      </router-link>
+    </template>
   </div>
 </template>
 
@@ -38,7 +40,7 @@ export default {
     page() {
       return parseInt(this.$route.query.page) || 1;
     },
-    ...mapState(["events"])
+    ...mapState(["events", "eventsTotal"])
   }
 };
 </script>
