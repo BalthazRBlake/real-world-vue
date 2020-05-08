@@ -7,14 +7,14 @@
         :to="{ name: 'event-list', query: { page: page - 1 } }"
         rel="prev"
       >
-        Prev page
+        Prev page |
       </router-link>
     </template>
     <router-link
       :to="{ name: 'event-list', query: { page: page + 1 } }"
       rel="next"
     >
-      Next page
+      | Next page
     </router-link>
   </div>
 </template>
