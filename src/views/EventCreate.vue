@@ -2,7 +2,7 @@
   <div>
     <h1>Create an event</h1>
 
-    <form>
+    <form @submit.prevent="createEvent">
       <label>Select a category</label>
       <select v-model="event.category">
         <option v-for="cat in categories" :key="cat">{{ cat }}</option>
@@ -75,6 +75,9 @@ export default {
     };
   },
   methods: {
+    createEvent() {
+      this.$store.dispatch("createEvent", this.event);
+    },
     createFreshEventObject() {
       const user = this.$store.state.user;
       const id = Math.floor(Math.random() * 1000000);
@@ -90,7 +93,7 @@ export default {
         date: "",
         time: "",
         attendees: []
-      }
+      };
     }
   }
 };
