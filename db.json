@@ -79,6 +79,24 @@
           "name": "Mary Gordon"
         }
       ]
+    },
+    {
+      "id": 774375,
+      "user": {
+        "id": "abc123",
+        "name": "DonGato"
+      },
+      "category": "animal welfare",
+      "organizer": {
+        "id": "abc123",
+        "name": "DonGato"
+      },
+      "title": "Scatino",
+      "description": "El gato",
+      "location": "El bosque",
+      "date": "2020-05-20T11:10:00.000Z",
+      "time": "10:00",
+      "attendees": []
     }
   ]
 }
