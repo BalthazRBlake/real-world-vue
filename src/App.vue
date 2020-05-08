@@ -1,11 +1,16 @@
 <template>
   <div id="app">
     <NavBar />
-    <router-view />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
 <script>
+/*
+ The component isn't realoading when we navigate (Two possible solutions, using 2 for this App)
+* 1. Watch the page computed property, and call fetchEvents when it changes
+* 2. Reload components when the URL changes, including query parameters
+*/
 import NavBar from "@/components/NavBar.vue";
 export default {
   components: {
