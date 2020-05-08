@@ -55,14 +55,20 @@ export default new Vuex.Store({
           console.log(error.response);
         });
     },
-    fetchEvent({ commit }, id) {
-      EventService.getEvent(id)
-        .then(response => {
-          commit("SET_EVENT", response.data);
-        })
-        .catch(error => {
-          console.log(error.response);
-        });
+    fetchEvent({ commit, getters }, id) {
+      let event = getters.getEventById(id);
+
+      if (event) {
+        commit("SET_EVENT", event);
+      } else {
+        EventService.getEvent(id)
+          .then(response => {
+            commit("SET_EVENT", response.data);
+          })
+          .catch(error => {
+            console.log(error.response);
+          });
+      }
     }
   },
   getters: {
